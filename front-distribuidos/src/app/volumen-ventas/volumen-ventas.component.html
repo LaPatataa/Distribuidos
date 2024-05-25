@@ -1,0 +1,21 @@
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <div class="volumen-ventas-container" style="font-family: 'Roboto', sans-serif;">
+    <h2 style="font-weight: bold;">Volumen ventas</h2>
+    <div class="volumen-ventas-content">
+        <div class="chart-container">
+        <canvas id="graficoBarras"></canvas>
+        </div>
+        <div class="filter-container">
+        <h3>Filtrar por descripción de campaña</h3>
+        <div *ngFor="let descripcion of descripcionesCampana">
+            <input type="checkbox" [value]="descripcion" (change)="toggleDescripcionCampana($event)" /> {{ descripcion }}
+        </div>
+        <div class="agentes-container">
+            <h3>Filtrar por agente</h3>
+            <div *ngFor="let agente of agentes">
+                <input type="checkbox" [value]="agente" (change)="toggleAgente($event)" /> {{ agente }}
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>

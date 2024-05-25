@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+<div class="volumen-ventas-container" style="font-family: 'Roboto', sans-serif;">
+  <div class="opciones">Opciones</div>
+  <div class="menu-icon" (click)="toggleFiltros()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  <div class="filter-container" [ngStyle]="{'display': mostrarFiltros ? 'block' : 'none'}">
+    <div class="campanas-container">
+      <h2>Filtrar por Campaña</h2>
+      <div *ngFor="let campana of campanas">
+        <label>
+          <input type="checkbox" [value]="campana" (change)="toggleCampana(campana)" [checked]="isCampanaSeleccionada(campana)">
+          {{ campana }}
+        </label>
+      </div>
+    </div>
+    <div class="agentes-container">
+      <h2>Filtrar por Agente</h2>
+      <div *ngFor="let agente of agentes">
+        <label>
+          <input type="checkbox" [value]="agente" (change)="toggleAgente(agente)" [checked]="isAgenteSeleccionado(agente)">
+          {{ agente }}
+        </label>
+      </div>
+    </div>
+    <div class="calificaciones-container">
+      <h2>Filtrar por Calificación</h2>
+      <div *ngFor="let calificacion of calificaciones">
+        <label>
+          <input type="checkbox" [value]="calificacion" (change)="toggleCalificacion(calificacion)" [checked]="isCalificacionSeleccionada(calificacion)">
+          {{ calificacion }}
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="tabla">
+    <h1>Encuestas de Satisfacción</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Campaña</th>
+          <th>Nombre Agente</th>
+          <th>Nombre Cliente</th>
+          <th>Calificación</th>
+        </tr>
+      </thead>  
+      <tbody>
+        <tr *ngFor="let encuesta of encuestasSatisfaccion">
+          <ng-container *ngIf="isAgenteSeleccionado(encuesta.agente.nombreAgente) && 
+                              isCampanaSeleccionada(encuesta.agente.campana.descripcionCampana) &&
+                              isCalificacionSeleccionada(encuesta.calificacion)">
+            <td>{{ encuesta.calificacionId }}</td>
+            <td>{{ encuesta.agente.campana.descripcionCampana }}</td>
+            <td>{{ encuesta.agente.nombreAgente }}</td>
+            <td>{{ encuesta.cliente.nombreCliente }}</td>
+            <td>{{ encuesta.calificacion }}</td>
+          </ng-container>
+        </tr>
+      </tbody>
+      
+    </table>
+  </div>
+</div>

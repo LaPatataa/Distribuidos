@@ -1,0 +1,45 @@
+.volumen-ventas-container {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .volumen-ventas-content {
+    display: flex;
+  }
+  
+  .chart-container {
+    flex-grow: 1;
+    max-width: calc(100% - 250px);
+  }
+  
+  .filter-container {
+    margin-left: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px; 
+  }
+  
+  .filter-container h3 {
+    margin-top: 0;
+    font-size: 16px;
+  }
+  
+  .filter-container div {
+    margin-bottom: 8px;
+  }
+  
+  .filter-container input[type="checkbox"] {
+    transform: scale(1.5); 
+    margin-right: 5px; 
+  }
+
+  .agentes-container {
+    max-height: 390px; /* Ajusta la altura máxima según sea necesario */
+    overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando el contenido excede la altura máxima */
+}
+
+body {
+    overflow-y: hidden; /* Elimina el desplazamiento vertical en la página */
+}
+
+  

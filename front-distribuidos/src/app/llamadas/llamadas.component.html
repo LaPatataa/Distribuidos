@@ -1,0 +1,28 @@
+<div>
+    <h1>Lista de llamadas</h1>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Duración de la llamada</th>
+            <th>Fecha</th>
+            <th>Nombre del agente</th>
+            <th>Nombre del cliente</th>
+            <th>Descripción de la campaña</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let llamada of llamadas">
+            <td>{{ llamada.idLlamada }}</td>
+            <td>{{ parsearDuracion(llamada.duracionLlamada) }}</td>
+            <td>{{ parsearFecha(llamada.fechaHora) }}</td>
+            <td>{{ llamada.agente.nombreAgente }}</td>
+            <td>{{ llamada.cliente.nombreCliente }}</td>
+            <td>{{ llamada.agente.campana.descripcionCampana }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

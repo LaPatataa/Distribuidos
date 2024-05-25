@@ -1,0 +1,38 @@
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 20px;
+    font-family: 'Inter', sans-serif; /* Margen superior para separar el encabezado */
+  }
+  
+h1{
+  font-family: 'Inter', sans-serif;
+}
+
+  .table th {
+    background-color: #007bff; /* Color de fondo del encabezado */
+    color: #fff; /* Color del texto del encabezado */
+    border-color: #dee2e6;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Estilos para las celdas de la tabla */
+  .table td {
+    border-color: #dee2e6;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Estilos para filas alternas (para un aspecto zebra) */
+  .table tbody tr:nth-child(even) {
+    background-color: #f8f9fa; /* Color de fondo para filas pares */
+  }
+  
+  /* Estilos para la fila seleccionada (hover) */
+  .table tbody tr:hover {
+    background-color: #cce5ff; /* Color de fondo al pasar el cursor sobre la fila */
+  }
+    
